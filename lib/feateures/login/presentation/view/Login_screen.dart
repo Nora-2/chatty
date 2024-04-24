@@ -1,5 +1,4 @@
-
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, file_names, non_constant_identifier_names
 
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
@@ -21,7 +20,7 @@ import 'package:scholar_chat/feateures/chat/presentation/widget/messanger.dart';
 class LoginScreen extends StatefulWidget {
   static String id = 'LoginPage';
 
-  LoginScreen({Key? key}) : super(key: key);
+  const LoginScreen({Key? key}) : super(key: key);
 
   @override
   State<LoginScreen> createState() => _LoginScreenState();

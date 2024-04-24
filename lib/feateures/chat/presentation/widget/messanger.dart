@@ -1,4 +1,3 @@
-
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -7,11 +6,13 @@ import 'package:scholar_chat/core/constants/colorconstant.dart';
 import 'package:scholar_chat/core/models/message_model.dart';
 import 'package:scholar_chat/feateures/chat/cubit/chat_cubit.dart';
 import 'package:scholar_chat/feateures/chat/presentation/view/chat_screen.dart';
-
-
+import 'package:scholar_chat/feateures/chat/presentation/widget/build_chat.dart';
+import 'package:scholar_chat/feateures/chat/presentation/widget/story.dart';
 
 class Messanger extends StatefulWidget {
   static String id = 'Messanger';
+
+  const Messanger({Key? key}) : super(key: key);
 
   @override
   State<Messanger> createState() => _MessangerState();
@@ -39,10 +40,12 @@ class _MessangerState extends State<Messanger> {
               }
             }
             return ModalProgressHUD(
+              progressIndicator:const CircularProgressIndicator(backgroundColor: Colors.white,color: icolor,)
+        ,color: icolor,
               inAsyncCall: false,
               child: Scaffold(
                 appBar: AppBar(
-                  backgroundColor: kcolor,
+                  backgroundColor: icolor,
                   automaticallyImplyLeading: false,
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -76,17 +79,17 @@ class _MessangerState extends State<Messanger> {
                               radius: 25,
                               backgroundImage: NetworkImage(admin.photo),
                             ),
-                           const SizedBox(
+                            const SizedBox(
                               width: 10,
                             ),
                             Text(
                               admin.username,
-                              style:
-                                const  TextStyle(color: Colors.black, fontSize: 25),
+                              style: const TextStyle(
+                                  color: Colors.black, fontSize: 25),
                             ),
                           ],
                         ),
-                       const SizedBox(
+                        const SizedBox(
                           height: 15,
                         ),
                         Container(
@@ -127,7 +130,7 @@ class _MessangerState extends State<Messanger> {
                               onTap: () {
                                 BlocProvider.of<ChatCubit>(context).getmessage(
                                     sender: uid as String,
-                                     reciver: userList[index].uid);
+                                    reciver: userList[index].uid);
                                 Navigator.pushNamed(context, Chat_Screen.id,
                                     arguments: userList[index].uid);
                               },
@@ -145,97 +148,9 @@ class _MessangerState extends State<Messanger> {
               ),
             );
           } else {
-            return const ModalProgressHUD(inAsyncCall: true, child: Scaffold());
+            return const ModalProgressHUD(progressIndicator: CircularProgressIndicator(backgroundColor: Colors.white,color: icolor,)
+        ,color: icolor,inAsyncCall: true, child: Scaffold());
           }
         });
   }
-
-  Widget BuilChat(String username, photo) => Row(
-        children: [
-          CircleAvatar(
-            backgroundImage: NetworkImage(photo),
-            radius: 30,
-          ),
-          const SizedBox(
-            width: 10,
-          ),
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  username,
-                  maxLines: 1,
-                  overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                      fontSize: 20, fontWeight: FontWeight.w400),
-                ),
-                Row(
-                  children: [
-                    const Expanded(
-                        child: Text(
-                      'Tap to see the messages',
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                    )),
-                    const SizedBox(
-                      width: 3,
-                    ),
-                    Container(
-                      height: 6,
-                      width: 6,
-                      decoration: const BoxDecoration(
-                        color: Colors.black,
-                        shape: BoxShape.circle,
-                      ),
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                  ],
-                )
-              ],
-            ),
-          ),
-        ],
-      );
-
-  Widget BuilStory(username, photo) => SizedBox(
-        width: 70,
-        child: Column(
-          children: [
-            const SizedBox(
-              height: 15,
-            ),
-            Stack(
-              alignment: AlignmentDirectional.bottomEnd,
-              children: [
-                CircleAvatar(
-                  radius: 35,
-                  backgroundImage: NetworkImage(photo),
-                ),
-                const Padding(
-                  padding: EdgeInsetsDirectional.only(
-                    bottom: 5,
-                    end: 5,
-                  ),
-                  child: CircleAvatar(
-                    radius: 7,
-                    backgroundColor: Colors.green,
-                  ),
-                ),
-              ],
-            ),
-            const SizedBox(
-              height: 5,
-            ),
-            Text(
-              username,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
-              textAlign: TextAlign.center,
-            ),
-          ],
-        ),
-      );
 }

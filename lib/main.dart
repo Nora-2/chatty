@@ -22,11 +22,13 @@ void main() async {
 
   runApp(DevicePreview( 
     enabled: true, 
-    builder: (context) => MyApp() 
+    builder: (context) => const MyApp() 
   )); 
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -38,10 +40,10 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         routes: {
-          RegisterScreen.id: (context) => RegisterScreen(),
-          LoginScreen.id: (context) => LoginScreen(),
+          RegisterScreen.id: (context) => const RegisterScreen(),
+          LoginScreen.id: (context) =>const LoginScreen(),
           Chat_Screen.id: (context) =>const Chat_Screen(),
-          Messanger.id: (context) => Messanger(),
+          Messanger.id: (context) =>const Messanger(),
           SplashScreen.id:(context) =>const SplashScreen(),
         },
         initialRoute: SplashScreen.id,

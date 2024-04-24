@@ -1,6 +1,5 @@
-// ignore_for_file: unused_catch_clause
+// ignore_for_file: unused_catch_clause, depend_on_referenced_packages
 
-import 'package:bloc/bloc.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:meta/meta.dart';
@@ -17,6 +16,7 @@ class LoginCubit extends Cubit<LoginState> {
       emit(changepassstate());
     }
   String? uid;
+  // ignore: non_constant_identifier_names
   Future<void> sign_in(
       {required String email, required String password}) async {
     emit(LoginLoading());

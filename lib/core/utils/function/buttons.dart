@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:scholar_chat/core/constants/colorconstant.dart';
 
 class customButtonContainer extends StatelessWidget {
-  const customButtonContainer({
+  const customButtonContainer({Key? key, 
     
     required this.size,
     required this.text,
-  });
+  }) : super(key: key);
 
   final Size size;
   final String text;
@@ -36,11 +36,11 @@ class customButtonContainer extends StatelessWidget {
 }
 
 class submit extends StatelessWidget {
-  const submit({
+  const submit({Key? key, 
     
     required this.size,
     required this.isDark,
-  });
+  }) : super(key: key);
 
   final Size size;
   final bool isDark;
@@ -66,11 +66,11 @@ class submit extends StatelessWidget {
 }
 
 class save extends StatefulWidget {
-  const save({
+  const save({Key? key, 
     
     required this.size,
     required this.isDark,
-  });
+  }) : super(key: key);
 
   final Size size;
   final bool isDark;

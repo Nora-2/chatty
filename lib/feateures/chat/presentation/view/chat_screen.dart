@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable, unnecessary_null_comparison
+// ignore_for_file: unused_local_variable, unnecessary_null_comparison, camel_case_types, avoid_print
 
 import 'package:file_picker/file_picker.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -42,6 +42,8 @@ class _Chat_ScreenState extends State<Chat_Screen> {
         .collection('messages');
     final sendmessages = FirebaseFirestore.instance.collection('users');
     return ModalProgressHUD(
+      progressIndicator:const CircularProgressIndicator(backgroundColor: Colors.white,color: icolor,)
+        ,color: icolor,
       inAsyncCall: false,
       child: Scaffold(
         appBar: AppBar(
@@ -77,10 +79,10 @@ class _Chat_ScreenState extends State<Chat_Screen> {
                   itemCount: messageList.length,
                   itemBuilder: (context, index) {
                     return messageList[index].sender == sender
-                        ? Chat_bubble(
-                            message: messageList[index],
+                        ? ChatBubble(
+                            message: messageList[index],alignment: Alignment.centerLeft,color: seccolor,
                           )
-                        : Chat_bubble_tofriend(message: messageList[index]);
+                        : ChatBubble(message: messageList[index],alignment: Alignment.centerRight,color: icolor,);
                   });
             },
           )),

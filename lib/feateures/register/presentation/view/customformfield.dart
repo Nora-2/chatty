@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:scholar_chat/core/constants/colorconstant.dart';
 
 class CustomFormField extends StatefulWidget {
-  const CustomFormField({
+  const CustomFormField({Key? key, 
     required this.hint,
     required this.preicon,
     this.text,
@@ -15,7 +15,7 @@ class CustomFormField extends StatefulWidget {
     required this.controller,
     this.onChanged,
   
-  });
+  }) : super(key: key);
   final bool ispass;
   final String hint;
   final Widget preicon;

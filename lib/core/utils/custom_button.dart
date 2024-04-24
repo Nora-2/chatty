@@ -5,7 +5,7 @@ import 'package:scholar_chat/core/utils/styles.dart';
 
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({
+  const CustomButton({Key? key, 
 
     required this.backgroundColor,
     required this.textColor,
@@ -13,7 +13,7 @@ class CustomButton extends StatelessWidget {
     required this.text,
     this.fontSize,
     this.onPressed,
-  });
+  }) : super(key: key);
   final String text;
   final Color backgroundColor;
   final Color textColor;

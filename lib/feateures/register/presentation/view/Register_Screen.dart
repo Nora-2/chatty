@@ -1,4 +1,4 @@
-// ignore_for_file: must_be_immutable
+// ignore_for_file: must_be_immutable, file_names, non_constant_identifier_names
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -18,6 +18,8 @@ import 'package:scholar_chat/feateures/register/presentation/view/customformfiel
 
 class RegisterScreen extends StatefulWidget {
   static String id = 'RegisterPage';
+
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
@@ -40,7 +42,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   bool isLoading = false;
 
-  GlobalKey<FormState> _formkey = GlobalKey();
+  final GlobalKey<FormState> _formkey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -239,7 +241,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                             Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                builder: (_) => LoginScreen(),
+                                builder: (_) => const LoginScreen(),
                               ),
                             );
                           },

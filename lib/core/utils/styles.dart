@@ -35,11 +35,11 @@ abstract class Styles {
 
 
 class CustomText extends StatelessWidget {
-  CustomText({
+  CustomText({Key? key, 
     required this.text,
     required this.style,
   
-  });
+  }) : super(key: key);
   String text;
   dynamic style;
   @override
@@ -49,10 +49,10 @@ class CustomText extends StatelessWidget {
 }
 
 class CustomTextfont24_600 extends StatelessWidget {
-  CustomTextfont24_600({
+  CustomTextfont24_600({Key? key, 
     required this.text,
 
-  });
+  }) : super(key: key);
   String text;
   dynamic style;
   @override
@@ -66,7 +66,7 @@ class CustomTextfont24_600 extends StatelessWidget {
 
 
 class customtext50014 extends StatelessWidget {
-  const customtext50014({ required this.text});
+  const customtext50014({Key? key,  required this.text}) : super(key: key);
   final String text;
   @override
   Widget build(BuildContext context) {
@@ -79,10 +79,10 @@ class customtext50014 extends StatelessWidget {
   }
 }
 class CustomTextfont24_900 extends StatelessWidget {
-  CustomTextfont24_900({
+  CustomTextfont24_900({Key? key, 
     required this.text,
     
-  });
+  }) : super(key: key);
   String text;
   dynamic style;
   @override
@@ -96,10 +96,10 @@ class CustomTextfont24_900 extends StatelessWidget {
 }
 
 class CustomTextfont16_700 extends StatelessWidget {
-  CustomTextfont16_700({
+  CustomTextfont16_700({Key? key, 
     required this.text,
     
-  });
+  }) : super(key: key);
   String text;
   dynamic style;
   @override
@@ -113,7 +113,7 @@ class CustomTextfont16_700 extends StatelessWidget {
 }
 
 class customtext60020 extends StatelessWidget {
-  const customtext60020({ required this.text});
+  const customtext60020({Key? key,  required this.text}) : super(key: key);
   final String text;
   @override
   Widget build(BuildContext context) {
@@ -130,7 +130,7 @@ class customtext60020 extends StatelessWidget {
 }
 
 class customtext400_12 extends StatelessWidget {
-  const customtext400_12({ required this.text});
+  const customtext400_12({Key? key,  required this.text}) : super(key: key);
   final String text;
   @override
   Widget build(BuildContext context) {
@@ -144,10 +144,10 @@ class customtext400_12 extends StatelessWidget {
 }
 
 class CustomTextfont16_500 extends StatelessWidget {
-  CustomTextfont16_500({
+  CustomTextfont16_500({Key? key, 
     required this.text,
     
-  });
+  }) : super(key: key);
   String text;
   dynamic style;
   @override
@@ -160,10 +160,10 @@ class CustomTextfont16_500 extends StatelessWidget {
   }
 }
 class CustomTextfont12_700 extends StatelessWidget {
-  CustomTextfont12_700({
+  CustomTextfont12_700({Key? key, 
     required this.text,
     
-  });
+  }) : super(key: key);
   String text;
   dynamic style;
   @override
@@ -176,11 +176,11 @@ class CustomTextfont12_700 extends StatelessWidget {
   }
 }
 class customsizebox extends StatelessWidget {
-  const customsizebox({
+  const customsizebox({Key? key, 
     
     required this.size,
     required this.height,
-  });
+  }) : super(key: key);
 
   final Size size;
   final double height;
@@ -194,11 +194,11 @@ class customsizebox extends StatelessWidget {
 }
 
 class customsizeboxwidth extends StatelessWidget {
-  const customsizeboxwidth({
+  const customsizeboxwidth({Key? key, 
     
     required this.size,
     required this.width,
-  });
+  }) : super(key: key);
 
   final Size size;
   final double width;

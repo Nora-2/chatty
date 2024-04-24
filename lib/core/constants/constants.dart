@@ -73,10 +73,10 @@ class socialmedia extends StatelessWidget {
   // final GoogleSignIn googleSignIn = new GoogleSignIn();
 
  
- const socialmedia({
+ const socialmedia({Key? key, 
   
     required this.size,
-  });
+  }) : super(key: key);
 
   final Size size;
 
@@ -129,10 +129,10 @@ class socialmedia extends StatelessWidget {
 }
 
 class seprator extends StatelessWidget {
-  const seprator({
+  const seprator({Key? key, 
 
     required this.size,
-  });
+  }) : super(key: key);
 
   final Size size;
 

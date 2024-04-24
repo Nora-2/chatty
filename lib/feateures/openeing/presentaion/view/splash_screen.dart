@@ -15,8 +15,6 @@ static String id = 'SplashScreen';
     return Scaffold(
       body: Stack(
         children: [
-         
-          
           Container(
             padding: EdgeInsets.only(
               top: MediaQuery.of(context).size.height * 0.1,
@@ -34,7 +32,7 @@ static String id = 'SplashScreen';
                 height: 120,
                 width: 120,
               ),
-              nextScreen:  LoginScreen(),
+              nextScreen: const LoginScreen(),
                  
               animationDuration: const Duration(seconds: 2),
             ),
