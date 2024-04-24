@@ -3,12 +3,17 @@
 import 'package:flutter/material.dart';
 import '../../../../core/models/message_model.dart';
 
-
 class ChatBubble extends StatelessWidget {
   final MessageModel message;
   final AlignmentGeometry alignment;
- final Color color;
-  const ChatBubble({Key? key, required this.message, required this.alignment,required this.color})
+  final BorderRadiusGeometry? borderRadius;
+  final Color color;
+  const ChatBubble(
+      {Key? key,
+      required this.borderRadius,
+      required this.message,
+      required this.alignment,
+      required this.color})
       : super(key: key);
 
   @override
@@ -28,12 +33,9 @@ class ChatBubble extends StatelessWidget {
             )
           : Container(
               margin: const EdgeInsets.symmetric(horizontal: 16, vertical: 8),
-              decoration:  BoxDecoration(
+              decoration: BoxDecoration(
                   color: color,
-                  borderRadius:const BorderRadius.only(
-                      bottomLeft: Radius.circular(15),
-                      topLeft: Radius.circular(15),
-                      topRight: Radius.circular(15))),
+                  borderRadius: borderRadius),
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: Text(

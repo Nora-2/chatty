@@ -80,9 +80,15 @@ class _Chat_ScreenState extends State<Chat_Screen> {
                   itemBuilder: (context, index) {
                     return messageList[index].sender == sender
                         ? ChatBubble(
-                            message: messageList[index],alignment: Alignment.centerLeft,color: seccolor,
+                            message: messageList[index],alignment: Alignment.centerLeft,color: seccolor,borderRadius: const BorderRadius.only(
+                      bottomRight: Radius.circular(15),
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15)),
                           )
-                        : ChatBubble(message: messageList[index],alignment: Alignment.centerRight,color: icolor,);
+                        : ChatBubble(message: messageList[index],alignment: Alignment.centerRight,color: icolor,borderRadius: const BorderRadius.only(
+                      bottomLeft: Radius.circular(15),
+                      topLeft: Radius.circular(15),
+                      topRight: Radius.circular(15)),);
                   });
             },
           )),
