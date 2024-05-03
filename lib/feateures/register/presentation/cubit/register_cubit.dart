@@ -31,7 +31,7 @@ class RegisterCubit extends Cubit<RegisterState> {
         'uid': user.user!.uid,
         'username': username,
         'photo':
-            'assets/images/menna.jpg'
+            'assets/images/Hi guyssss🖤.jpg'
       });
       emit(RegisterSuccess());
     } on FirebaseAuthException catch (e) {
